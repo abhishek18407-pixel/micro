@@ -1,0 +1,11 @@
+{
+  "call_no": 5,
+  "date": "2026-11-20",
+  "participants": [
+    "Alex Rivera",
+    "David Chen",
+    "Sarah Jenkins",
+    "Tom Bradley"
+  ],
+  "transcript": "Sarah Jenkins: Alex, let's get straight to the point. We reviewed our capital allocation for the upcoming quarter, and committing $180,000 upfront remains an insurmountable hurdle under our current spending freeze. Unless we can structure a low-risk phased pilot with guaranteed ROI milestones, this evaluation stops today.\n\nTom Bradley: And to compound that, Alex, our infosec review is completely blocked. When I met with compliance yesterday, they confirmed we still have not received the SOC2 Type II audit report and security audit results that you promised David weeks ago. Without that documentation, corporate compliance will not permit vendor approval.\n\nDavid Chen: Alex, I really want this platform for our engineering team, but my hands are tied. Elena and I love the tooling, but without the security audit results in hand and a way to satisfy Sarah's quarterly budget restrictions, we cannot proceed.\n\nAlex Rivera: Sarah, Tom, David, I hear you loud and clear, and I apologize for the delay on that compliance documentation. I have our updated SOC2 Type II report and third-party penetration summary ready to transmit to Tom's inbox immediately following this call.\n\nSarah Jenkins: That resolves the compliance blocker, but what about the financial exposure of the upfront $180,000 fee?\n\nAlex Rivera: We can deploy a 60-day phased-pricing pilot: an initial $20,000 implementation phase, where the remaining $160,000 balance only activates once we demonstrate at least $50,000 in verified cloud waste reduction across your first four distribution hubs.\n\nSarah Jenkins: A milestone-based pilot tied to verified savings directly protects our quarterly cash flow. Send that revised contract over today."
+}
