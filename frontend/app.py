@@ -45,15 +45,24 @@ st.markdown(
         margin-bottom: 1.5rem;
     }
     .card {
-        background-color: #F8FAFC;
-        border: 1px solid #E2E8F0;
+        background-color: #FFFFFF;
+        border: 1px solid #CBD5E1;
         border-radius: 8px;
         padding: 16px;
         margin-bottom: 12px;
+        color: #000000 !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .card b, .card strong, .card p, .card div, .card span:not([class*="stance-"]) {
+        color: #000000 !important;
+    }
+    .card small, .card small b, .card small strong, .card small span {
+        color: #111111 !important;
+        font-size: 0.85rem;
     }
     .badge-won {
         background-color: #DEF7EC;
-        color: #03543F;
+        color: #03543F !important;
         padding: 4px 10px;
         border-radius: 12px;
         font-weight: 600;
@@ -61,7 +70,7 @@ st.markdown(
     }
     .badge-lost {
         background-color: #FDE8E8;
-        color: #9B1C1C;
+        color: #9B1C1C !important;
         padding: 4px 10px;
         border-radius: 12px;
         font-weight: 600;
@@ -69,16 +78,44 @@ st.markdown(
     }
     .badge-open {
         background-color: #E1EFFE;
-        color: #1E429F;
+        color: #1E429F !important;
         padding: 4px 10px;
         border-radius: 12px;
         font-weight: 600;
         font-size: 0.8rem;
     }
-    .stance-champion { color: #057A55; font-weight: 600; }
-    .stance-cautious { color: #D97706; font-weight: 600; }
-    .stance-blocker { color: #E02424; font-weight: 600; }
-    .stance-neutral { color: #4B5563; font-weight: 600; }
+    .stance-champion {
+        background-color: #DEF7EC;
+        color: #03543F !important;
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.75rem;
+    }
+    .stance-cautious {
+        background-color: #FEF08A;
+        color: #854D0E !important;
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.75rem;
+    }
+    .stance-blocker {
+        background-color: #FDE8E8;
+        color: #9B1C1C !important;
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.75rem;
+    }
+    .stance-neutral {
+        background-color: #F3F4F6;
+        color: #1F2937 !important;
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.75rem;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -235,9 +272,9 @@ with tab1:
                 for obj in objections:
                     st.markdown(
                         f"""
-                        <div class="card">
-                            <b>Objection:</b> {obj.get('text')}<br>
-                            <small>Raised in <b>Call {obj.get('raised_in_call', 1)}</b> by <b>{obj.get('by', 'Stakeholder')}</b></small>
+                        <div class="card" style="color: #000000 !important; background-color: #FFFFFF;">
+                            <b style="color: #000000 !important;">Objection:</b> <span style="color: #000000 !important;">{obj.get('text')}</span><br>
+                            <small style="color: #111111 !important;">Raised in <b style="color: #000000 !important;">Call {obj.get('raised_in_call', 1)}</b> by <b style="color: #000000 !important;">{obj.get('by', 'Stakeholder')}</b></small>
                         </div>
                         """,
                         unsafe_allow_html=True,
@@ -254,9 +291,9 @@ with tab1:
                     stance_class = f"stance-{stance.lower()}"
                     st.markdown(
                         f"""
-                        <div class="card">
-                            <b>{sh.get('name')}</b> ({sh.get('role')}) - <span class="{stance_class}">{stance.upper()}</span><br>
-                            <small><b>Concerns:</b> {sh.get('concerns')}</small>
+                        <div class="card" style="color: #000000 !important; background-color: #FFFFFF;">
+                            <b style="color: #000000 !important;">{sh.get('name')}</b> <span style="color: #000000 !important;">({sh.get('role')})</span> - <span class="{stance_class}">{stance.upper()}</span><br>
+                            <small style="color: #111111 !important;"><b style="color: #000000 !important;">Concerns:</b> <span style="color: #000000 !important;">{sh.get('concerns')}</span></small>
                         </div>
                         """,
                         unsafe_allow_html=True,
@@ -273,9 +310,9 @@ with tab1:
                 for p in promises:
                     st.markdown(
                         f"""
-                        <div class="card">
-                            <b>Commitment:</b> {p.get('text')}<br>
-                            <small>Promised by <b>{p.get('made_by', 'Rep')}</b> | Due: <b>{p.get('due', 'Upcoming')}</b></small>
+                        <div class="card" style="color: #000000 !important; background-color: #FFFFFF;">
+                            <b style="color: #000000 !important;">Commitment:</b> <span style="color: #000000 !important;">{p.get('text')}</span><br>
+                            <small style="color: #111111 !important;">Promised by <b style="color: #000000 !important;">{p.get('made_by', 'Rep')}</b> | Due: <b style="color: #000000 !important;">{p.get('due', 'Upcoming')}</b></small>
                         </div>
                         """,
                         unsafe_allow_html=True,
@@ -290,9 +327,9 @@ with tab1:
                 for t in tips:
                     st.markdown(
                         f"""
-                        <div class="card">
-                            <b>Tip:</b> {t.get('tip')}<br>
-                            <small><b>Evidence:</b> {t.get('evidence')}</small>
+                        <div class="card" style="color: #000000 !important; background-color: #FFFFFF;">
+                            <b style="color: #000000 !important;">Tip:</b> <span style="color: #000000 !important;">{t.get('tip')}</span><br>
+                            <small style="color: #111111 !important;"><b style="color: #000000 !important;">Evidence:</b> <span style="color: #000000 !important;">{t.get('evidence')}</span></small>
                         </div>
                         """,
                         unsafe_allow_html=True,
@@ -450,9 +487,9 @@ with tab5:
             for m in models:
                 st.markdown(
                     f"""
-                    <div class="card">
-                        <h4 style="margin: 0; color: #1E3A8A;">📌 {m.get('name')}</h4>
-                        <p style="margin-top: 8px; color: #334155;">{m.get('summary')}</p>
+                    <div class="card" style="color: #000000 !important; background-color: #FFFFFF;">
+                        <h4 style="margin: 0; color: #1E3A8A !important;">📌 {m.get('name')}</h4>
+                        <p style="margin-top: 8px; color: #000000 !important;">{m.get('summary')}</p>
                     </div>
                     """,
                     unsafe_allow_html=True,
@@ -467,9 +504,9 @@ with tab5:
                 conf = int(ins.get("confidence", 0.85) * 100)
                 st.markdown(
                     f"""
-                    <div class="card">
-                        <b>Insight:</b> {ins.get('text')}<br>
-                        <small>Confidence Score: <b>{conf}%</b></small>
+                    <div class="card" style="color: #000000 !important; background-color: #FFFFFF;">
+                        <b style="color: #000000 !important;">Insight:</b> <span style="color: #000000 !important;">{ins.get('text')}</span><br>
+                        <small style="color: #111111 !important;">Confidence Score: <b style="color: #000000 !important;">{conf}%</b></small>
                     </div>
                     """,
                     unsafe_allow_html=True,
