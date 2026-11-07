@@ -1,5 +1,36 @@
+# Environment variables & secrets
 .env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+*.env
+!*.env.example
+.env.local
+.env.*.local
+
+# Python artifacts
 __pycache__/
+*.py[cod]
+*$py.class
+venv/
 .venv/
-*.pyc
+env/
+ENV/
+*.egg-info/
+.pytest_cache/
+deals_store.json
+*.onnx
+*.mp4
+*.avi
+
+# Node artifacts
+node_modules/
+dist/
+.vite/
+build/
+
+# Operating System files
 .DS_Store
+Thumbs.db
+desktop.ini
